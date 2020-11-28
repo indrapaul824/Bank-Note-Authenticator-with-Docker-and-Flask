@@ -6,7 +6,7 @@ from sklearn.metrics import accuracy_score
 import pickle
 
 
-data = pd.read_csv('https://raw.githubusercontent.com/krishnaik06/Dockers/master/BankNote_Authentication.csv')
+data = pd.read_csv('data/BankNoteAuth.csv')
 print(data.head())
 
 # Data is preprocessed
