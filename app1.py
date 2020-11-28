@@ -20,9 +20,9 @@ def welcome():
 @app.route('/predict')
 def predict_note_auth():
     """
-    Bank Note Authenticator using RandomForest Classification
+    Bank Note Authenticator from single digit inputs
     ---
-    Parameters:
+    parameters:
       - name: variance
         in: query
         type: number
@@ -40,10 +40,9 @@ def predict_note_auth():
         type: number
         required: true
 
-    Returns:
-        The predicted outcome:
-        0 - Note is not authentic
-        1 - Note is authentic
+    responses:
+        200:
+            description: The output values
     """
     variance = request.args.get('variance')
     skewness = request.args.get('skewness')
@@ -56,8 +55,23 @@ def predict_note_auth():
 
 @app.route('/predict_file', methods=["POST"])
 def predict_note_auth_file():
+    """
+    Bank Note Authenticator from a file
+    ---
+    parameters:
+        - name: file
+          in: formData
+          type: file
+          required: true
+
+    responses:
+        200:
+            description: The output values
+    """
     df_test = pd.read_csv(request.files.get("file"))
+    print(df_test.head())
     prediction = classifier.predict(df_test)
+
     return "The predicted value for the csv is" + str(list(prediction))
 
 
