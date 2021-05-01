@@ -3,3 +3,10 @@ pandas
 matplotlib
 seaborn
 sklearn
+Flask
+flassger
+gunicorn
+itsdangerous
+Jinja2
+MarkupSafe
+Werkzeug
