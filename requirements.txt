@@ -10,4 +10,3 @@ itsdangerous
 Jinja2
 MarkupSafe
 Werkzeug
-pickle
