@@ -1,4 +1,4 @@
-FROM continuumio/anaconda3:4.4.0
+FROM python:3
 COPY . /usr/app/
 EXPOSE 5000
 WORKDIR /usr/app/
