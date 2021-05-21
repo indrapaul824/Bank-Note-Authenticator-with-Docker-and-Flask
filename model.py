@@ -1,5 +1,5 @@
-import pandas as pd
 import numpy as np
+import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -43,7 +43,7 @@ train_score = rf.score(X_train, y_train) * 100
 test_score = rf.score(X_test, y_test) * 100
 
 # write scores to a file
-with open("metrics.txt", "w") as f:
+with open("static/metrics.txt", "w") as f:
     f.write("Training accuracy score: %2.2f%%\n" % train_score)
     f.write("Test accuracy score: %2.2f%%\n" % test_score)
 
@@ -67,7 +67,7 @@ ax.set_ylabel('Feature', fontsize=axis_fs)  # ylabel
 ax.set_title('Random forest\nfeature importance', fontsize=title_fs)
 
 plt.tight_layout()
-plt.savefig("feature_importance.png", dpi=120)
+plt.savefig("static/feature_importance.png", dpi=120)
 plt.close()
 
 
@@ -78,7 +78,7 @@ plt.close()
 plot_confusion_matrix(rf, X_test, y_test)
 
 plt.tight_layout()
-plt.savefig("confmat.png", dpi=120)
+plt.savefig("static/confmat.png", dpi=120)
     
 
 ### Creating a Pickle file using serialization
