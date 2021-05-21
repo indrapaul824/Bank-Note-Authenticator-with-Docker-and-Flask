@@ -15,9 +15,9 @@ jobs:
           python model.py
           
           echo "## MODEL METRICS" > report.md
-          cat metrics.txt >> report.md
+          cat static/metrics.txt >> report.md
           
           echo "## Data Viz" >> report.md
-          cml-publish feature_importance.png --md >> report.md
-          cml-publish confmat.png --md >> report.md
+          cml-publish static/feature_importance.png --md >> report.md
+          cml-publish static/confmat.png --md >> report.md
           cml-send-comment report.md
