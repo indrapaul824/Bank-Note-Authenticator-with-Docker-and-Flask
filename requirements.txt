@@ -1,12 +1,7 @@
-numpy
-pandas
-matplotlib
-seaborn
-sklearn
-Flask
+# To ensure app dependencies are ported from your virtual environment/host machine into your container, run 'pip freeze > requirements.txt' in the terminal to overwrite this file
+flask==1.1.2
+gunicorn==20.0.4
 flasgger
-gunicorn
-itsdangerous
-Jinja2
-MarkupSafe
-Werkzeug
+pandas
+numpy
+sklearn
